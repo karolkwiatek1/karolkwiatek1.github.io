@@ -1,1 +1,85 @@
-Hello World
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Prosty kalkulator</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f9f9f9;
+      padding: 20px;
+      max-width: 600px;
+      margin: auto;
+    }
+    h1 {
+      text-align: center;
+    }
+    label {
+      display: block;
+      margin: 15px 0 5px;
+    }
+    input[type="number"] {
+      width: 100%;
+      padding: 10px;
+      box-sizing: border-box;
+      font-size: 1em;
+    }
+    button {
+      margin-top: 20px;
+      padding: 12px;
+      width: 100%;
+      font-size: 1em;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      cursor: pointer;
+      border-radius: 4px;
+    }
+    button:hover {
+      background-color: #45a049;
+    }
+    #result {
+      margin-top: 20px;
+      font-size: 1.2em;
+      font-weight: bold;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <h1>Oblicz coś</h1>
+  
+  <label for="input1">Wartość 1:</label>
+  <input type="number" id="input1" required>
+
+  <label for="input2">Wartość 2:</label>
+  <input type="number" id="input2" required>
+
+  <label for="input3">Wartość 3:</label>
+  <input type="number" id="input3" required>
+
+  <button onclick="calculate()">Oblicz</button>
+
+  <div id="result">Wynik pojawi się tutaj</div>
+
+  <script>
+    function calculate() {
+      const a = parseFloat(document.getElementById('input1').value);
+      const b = parseFloat(document.getElementById('input2').value);
+      const c = parseFloat(document.getElementById('input3').value);
+
+      if (isNaN(a) || isNaN(b) || isNaN(c)) {
+        document.getElementById('result').textContent = 'Proszę wprowadzić wszystkie liczby.';
+        return;
+      }
+
+      // 👇 Tu wpisz swój własny wzór. Przykład: a * b + c
+      const wynik = a * b + c;
+
+      document.getElementById('result').textContent = 'Wynik: ' + wynik;
+    }
+  </script>
+</body>
+</html>
+
