@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Prosty kalkulator</title>
+  <title>Marka własna</title>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -48,15 +48,15 @@
   </style>
 </head>
 <body>
-  <h1>Oblicz coś</h1>
+  <h1>Kalkulator sprzedaży marki własnej 🐸</h1>
   
-  <label for="input1">Wartość 1:</label>
+  <label for="input1">Ile produktów marki własnej jest sprzedane:</label>
   <input type="number" id="input1" required>
 
-  <label for="input2">Wartość 2:</label>
+  <label for="input2">Ile produktów łącznie jest sprzedane:</label>
   <input type="number" id="input2" required>
 
-  <label for="input3">Wartość 3:</label>
+  <label for="input3">Ile procent marki własnej chcesz osiągnąć:</label>
   <input type="number" id="input3" required>
 
   <button onclick="calculate()">Oblicz</button>
@@ -75,7 +75,7 @@
       }
 
       // 👇 Tu wpisz swój własny wzór. Przykład: a * b + c
-      const wynik = a * b + c;
+      const wynik = c * (100 * b - 100 * a)/(100 - c);
 
       document.getElementById('result').textContent = 'Wynik: ' + wynik;
     }
